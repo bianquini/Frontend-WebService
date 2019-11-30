@@ -24,9 +24,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/vendor/bootstrap/css/bootstrap.min.css",
+              "src/vendor/fontawesome-free/css/all.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/js/changeimg.js",
+              "src/vendor/jquery/jquery.min.js",
+              "src/vendor/bootstrap/js/bootstrap.bundle.min.js",
+              "src/vendor/jquery-easing/jquery.easing.min.js",
+              "src/js/resume.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -89,9 +97,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/vendor/bootstrap/css/bootstrap.min.css",
+              "src/vendor/fontawesome-free/css/all.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/js/changeimg.js",
+              "src/vendor/jquery/jquery.min.js",
+              "src/vendor/bootstrap/js/bootstrap.bundle.min.js",
+              "src/vendor/jquery-easing/jquery.easing.min.js",
+              "src/js/resume.js"
+            ]
           }
         },
         "lint": {
