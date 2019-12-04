@@ -43,16 +43,14 @@ function img04() {
 }
 
 
-function getId() {
-        var classes = document.getElementById("1").classList;
-        console.log("oi");
-        if (classes.contains("button_busy")) {
-                classes.remove("button_busy");
-                classes.add("button_available");    
-        }else{
-                classes.remove("button_available");
-                classes.add("button_busy");   
-        }
-
+function getId(id) {
+     var classes = document.getElementById(id).classList;
+     if(classes.contains("button_available")){
+             classes.remove("button_available");
+             classes.add("button_busy");
+     }else{
+        classes.remove("button_busy");
+        classes.add("button_available");
+     }
 }
 

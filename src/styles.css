@@ -187,7 +187,7 @@
     color: #824027;
   }
   
-  /* Teste */
+/* Parking */
 
   li {
     list-style: none outside none;
@@ -202,21 +202,24 @@
     border-radius: 0.317rem;
     font-weight: 700;
     font-size: 1rem;
+    text-align: right;
     font-family: "Helvetica Neue", Arial, sans-serif;
     cursor: pointer;
   }
 
   .button_available {
-    background: url("assets/img/Icons/available.png") rgb(173, 250, 150);
+    background: url("assets/img/Icons/available.png") rgb(173, 250, 150) no-repeat;
     height: 32px;
-    width: 32px;
+    width: 64px;
+    color: green;
     display: block;
   }
 
   .button_busy {
-    background: url("assets/img/Icons/busy.png") rgb(255, 220, 216);
+    background: url("assets/img/Icons/busy.png") rgb(255, 220, 216) no-repeat;
     height: 32px;
-    width: 32px;
+    width: 64px;
+    color: rgb(201, 56, 66);
     display: block;
   }
 
