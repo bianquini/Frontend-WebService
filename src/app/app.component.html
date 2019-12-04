@@ -34,262 +34,137 @@
       <h1 class="mb-0">Parking - Iago e Tiago</h1>
       <div class="subheading mb-5">Web Service para consulta de vagas de estacionamento disponíveis e ocupadas no IFSC -
         Câmpus Lages.</div>
-      <!--div style="float: left; width: 45%">
-       <p class="lead mb-5">Vagas Disponíveis:</p>
+
+      <div>
+        <ul>
+          <li>
+            <button class="button button_available" onclick="getId(this.id)" id="1"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(this.id)" id="2"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="3"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="4"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="5"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="6"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="7"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="8"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="9"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="10"></button>
+          </li>
+          <li>
+            <button class="button button_busy" onclick="getId(id)" id="11"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="12"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="13"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="14"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="15"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="16"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="17"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="18"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="19"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="20"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="21"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="22"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="23"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="24"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="25"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="26"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="27"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="28"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="29"></button>
+          </li>
+          <li>
+            <button class="button button_available" onclick="getId(id)" id="30"></button>
+          </li>
+          <li>
+              <button class="button button_available" onclick="getId(id)" id="31"></button>
+            </li>
+            <li>
+              <button class="button button_available" onclick="getId(id)" id="32"></button>
+            </li>
+            <li>
+              <button class="button button_available" onclick="getId(id)" id="33"></button>
+            </li>
+            <li>
+              <button class="button button_available" onclick="getId(id)" id="34"></button>
+            </li>
+            <li>
+              <button class="button button_available" onclick="getId(id)" id="35"></button>
+            </li>
+            <li>
+              <button class="button button_available" onclick="getId(id)" id="36"></button>
+            </li>
+            <li>
+              <button class="button button_available" onclick="getId(id)" id="37"></button>
+            </li>
+            <li>
+              <button class="button button_available" onclick="getId(id)" id="38"></button>
+            </li>
+            <li>
+              <button class="button button_available" onclick="getId(id)" id="39"></button>
+            </li>
+            <li>
+              <button class="button button_available" onclick="getId(id)" id="40"></button>
+            </li>
+        </ul>
+        <div style="float: left; width: 45%">
+          <p class="lead mb-5">Vagas Disponíveis: <img src="/assets/img/Icons/available.png"></p> 
+        </div>
+        <div style="float: right; width: 45%">
+          <p class="lead mb-5">Vagas Ocupadas:  <img src="/assets/img/Icons/busy.png"></p> 
+        </div>
       </div>
-      <div style="float: right; width: 45%">
-        <p class="lead mb-5">Vagas Ocupadas:</p>
-      </div-->
-       <form id="form1" runat="server">
-    <h2 style="font-size:1.2em;">Choose slot by clicking the corresponding slot in the parking layout below:</h2>
-    <div id="holder">
-      <ul id="place">
-        <li class='seat row-0 col-0  ' style='top:0px;left:0px'>
-          <a title=1>1</a>
-        </li>
-        <li class='seat row-0 col-1  ' style='top:0px;left:60px'>
-          <a title=6>6</a>
-        </li>
-        <li class='seat row-0 col-2  ' style='top:0px;left:120px'>
-          <a title=11>11</a>
-        </li>
-        <li class='seat row-0 col-3  ' style='top:0px;left:174px'>
-          <a title=16>16</a>
-        </li>
-        <li class='seat row-0 col-4  ' style='top:0px;left:232px'>
-          <a title=21>21</a>
-        </li>
-        <li class='seat row-0 col-5  ' style='top:0px;left:290px'>
-          <a title=26>26</a>
-        </li>
-        <li class='seat row-0 col-6  ' style='top:0px;left:348px'>
-          <a title=31>31</a>
-        </li>
-        <li class='seat row-0 col-7  ' style='top:0px;left:406px'>
-          <a title=36>36</a>
-        </li>
-        <li class='seat row-0 col-8  ' style='top:0px;left:464px'>
-          <a title=41>41</a>
-        </li>
-        <li class='seat row-0 col-9  ' style='top:0px;left:522px'>
-          <a title=46>46</a>
-        </li>
-        <li class='seat row-0 col-10  ' style='top:0px;left:580px'>
-          <a title=51>51</a>
-        </li>
-        <li class='seat row-0 col-11  ' style='top:0px;left:638px'>
-          <a title=56>56</a>
-        </li>
-        <li class='seat row-0 col-12  ' style='top:0px;left:696px'>
-          <a title=61>61</a>
-        </li>
-        <li class='seat row-0 col-13  ' style='top:0px;left:754px'>
-          <a title=66>66</a>
-        </li>
-        <li class='seat row-0 col-14  ' style='top:0px;left:812px'>
-          <a title=71>71</a>
-        </li>
-        <li class='seat row-1 col-0  ' style='top:51px;left:0px'>
-          <a title=2>2</a>
-        </li>
-        <li class='seat row-1 col-1  ' style='top:51px;left:58px'>
-          <a title=7>7</a>
-        </li>
-        <li class='seat row-1 col-2  ' style='top:51px;left:116px'>
-          <a title=12>12</a>
-        </li>
-        <li class='seat row-1 col-3  ' style='top:51px;left:174px'>
-          <a title=17>17</a>
-        </li>
-        <li class='seat row-1 col-4  ' style='top:51px;left:232px'>
-          <a title=22>22</a>
-        </li>
-        <li class='seat row-1 col-5  ' style='top:51px;left:290px'>
-          <a title=27>27</a>
-        </li>
-        <li class='seat row-1 col-6  ' style='top:51px;left:348px'>
-          <a title=32>32</a>
-        </li>
-        <li class='seat row-1 col-7  ' style='top:51px;left:406px'>
-          <a title=37>37</a>
-        </li>
-        <li class='seat row-1 col-8  ' style='top:51px;left:464px'>
-          <a title=42>42</a>
-        </li>
-        <li class='seat row-1 col-9  ' style='top:51px;left:522px'>
-          <a title=47>47</a>
-        </li>
-        <li class='seat row-1 col-10  ' style='top:51px;left:580px'>
-          <a title=52>52</a>
-        </li>
-        <li class='seat row-1 col-11  ' style='top:51px;left:638px'>
-          <a title=57>57</a>
-        </li>
-        <li class='seat row-1 col-12  ' style='top:51px;left:696px'>
-          <a title=62>62</a>
-        </li>
-        <li class='seat row-1 col-13  ' style='top:51px;left:754px'>
-          <a title=67>67</a>
-        </li>
-        <li class='seat row-1 col-14  ' style='top:51px;left:812px'>
-          <a title=72>72</a>
-        </li>
-        <li class='seat row-2 col-0  ' style='top:70px;left:0px'>
-          <a title=3>3</a>
-        </li>
-        <li class='seat row-2 col-1  ' style='top:70px;left:58px'>
-          <a title=8>8</a>
-        </li>
-        <li class='seat row-2 col-2  ' style='top:70px;left:116px'>
-          <a title=13>13</a>
-        </li>
-        <li class='seat row-2 col-3  ' style='top:70px;left:174px'>
-          <a title=18>18</a>
-        </li>
-        <li class='seat row-2 col-4  ' style='top:70px;left:232px'>
-          <a title=23>23</a>
-        </li>
-        <li class='seat row-2 col-5  ' style='top:70px;left:290px'>
-          <a title=28>28</a>
-        </li>
-        <li class='seat row-2 col-6  ' style='top:70px;left:348px'>
-          <a title=33>33</a>
-        </li>
-        <li class='seat row-2 col-7  ' style='top:70px;left:406px'>
-          <a title=38>38</a>
-        </li>
-        <li class='seat row-2 col-8  ' style='top:70px;left:464px'>
-          <a title=43>43</a>
-        </li>
-        <li class='seat row-2 col-9  ' style='top:70px;left:522px'>
-          <a title=48>48</a>
-        </li>
-        <li class='seat row-2 col-10  ' style='top:70px;left:580px'>
-          <a title=53>53</a>
-        </li>
-        <li class='seat row-2 col-11  ' style='top:70px;left:638px'>
-          <a title=58>58</a>
-        </li>
-        <li class='seat row-2 col-12  ' style='top:70px;left:696px'>
-          <a title=63>63</a>
-        </li>
-        <li class='seat row-2 col-13  ' style='top:70px;left:754px'>
-          <a title=68>68</a>
-        </li>
-        <li class='seat row-2 col-14  ' style='top:70px;left:812px'>
-          <a title=73>73</a>
-        </li>
-        <li class='seat row-3 col-0  ' style='top:105px;left:0px'>
-          <a title=4>4</a>
-        </li>
-        <li class='seat row-3 col-1  ' style='top:105px;left:58px'>
-          <a title=9>9</a>
-        </li>
-        <li class='seat row-3 col-2  ' style='top:105px;left:116px'>
-          <a title=14>14</a>
-        </li>
-        <li class='seat row-3 col-3  ' style='top:105px;left:174px'>
-          <a title=19>19</a>
-        </li>
-        <li class='seat row-3 col-4  ' style='top:105px;left:232px'>
-          <a title=24>24</a>
-        </li>
-        <li class='seat row-3 col-5  ' style='top:105px;left:290px'>
-          <a title=29>29</a>
-        </li>
-        <li class='seat row-3 col-6  ' style='top:105px;left:348px'>
-          <a title=34>34</a>
-        </li>
-        <li class='seat row-3 col-7  ' style='top:105px;left:406px'>
-          <a title=39>39</a>
-        </li>
-        <li class='seat row-3 col-8  ' style='top:105px;left:464px'>
-          <a title=44>44</a>
-        </li>
-        <li class='seat row-3 col-9  ' style='top:105px;left:522px'>
-          <a title=49>49</a>
-        </li>
-        <li class='seat row-3 col-10  ' style='top:105px;left:580px'>
-          <a title=54>54</a>
-        </li>
-        <li class='seat row-3 col-11  ' style='top:105px;left:638px'>
-          <a title=59>59</a>
-        </li>
-        <li class='seat row-3 col-12  ' style='top:105px;left:696px'>
-          <a title=64>64</a>
-        </li>
-        <li class='seat row-3 col-13  ' style='top:105px;left:754px'>
-          <a title=69>69</a>
-        </li>
-        <li class='seat row-3 col-14  ' style='top:105px;left:812px'>
-          <a title=74>74</a>
-        </li>
-        <li class='seat row-4 col-0  ' style='top:140px;left:0px'>
-          <a title=5>5</a>
-        </li>
-        <li class='seat row-4 col-1  ' style='top:140px;left:58px'>
-          <a title=10>10</a>
-        </li>
-        <li class='seat row-4 col-2  ' style='top:140px;left:116px'>
-          <a title=15>15</a>
-        </li>
-        <li class='seat row-4 col-3  ' style='top:140px;left:174px'>
-          <a title=20>20</a>
-        </li>
-        <li class='seat row-4 col-4  ' style='top:140px;left:232px'>
-          <a title=25>25</a>
-        </li>
-        <li class='seat row-4 col-5  ' style='top:140px;left:290px'>
-          <a title=30>30</a>
-        </li>
-        <li class='seat row-4 col-6  ' style='top:140px;left:348px'>
-          <a title=35>35</a>
-        </li>
-        <li class='seat row-4 col-7  ' style='top:140px;left:406px'>
-          <a title=40>40</a>
-        </li>
-        <li class='seat row-4 col-8  ' style='top:140px;left:464px'>
-          <a title=45>45</a>
-        </li>
-        <li class='seat row-4 col-9  ' style='top:140px;left:522px'>
-          <a title=50>50</a>
-        </li>
-        <li class='seat row-4 col-10  ' style='top:140px;left:580px'>
-          <a title=55>55</a>
-        </li>
-        <li class='seat row-4 col-11  ' style='top:140px;left:638px'>
-          <a title=60>60</a>
-        </li>
-        <li class='seat row-4 col-12  ' style='top:140px;left:696px'>
-          <a title=65>65</a>
-        </li>
-        <li class='seat row-4 col-13  ' style='top:140px;left:754px'>
-          <a title=70>70</a>
-        </li>
-        <li class='seat row-4 col-14  ' style='top:140px;left:812px'>
-          <a title=75>75</a>
-        </li>
-      </ul>
-    </div>
-    <div style="width:600px;text-align:center;overflow:auto">
-      <ul id="seatDescription">
-        <li style="background:url('http://www.iconsdb.com/icons/download/guacamole-green/car-26-32.jpg') no-repeat scroll 0 0 transparent;">
-          Available Seat
-        </li>
-        <li style="background:url('http://www.iconsdb.com/icons/download/soylent-red/car-26-32.jpg') no-repeat scroll 0 0 transparent;">
-          Booked Seat
-        </li>
-        <li style="background:url('http://www.iconsdb.com/icons/download/royal-blue/car-26-32.jpg') no-repeat scroll 0 0 transparent;">
-          Selected Seat
-        </li>
-      </ul>
-    </div>
-    <div style="width:580px;text-align:left;margin:5px">
-      <input id="btnShowNew" value="Show Selected Seats" type="button">
-      <input id="btnShow" value="Show All" type="button">
-      <input id="btnAddNew" value="Add New Seat" type="button">
-    </div>
-  </form>
     </div>
   </section>
 
