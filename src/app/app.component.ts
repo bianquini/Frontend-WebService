@@ -7,12 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  vagas = [];
+  slots = [];
+
+  slotsBusy:number = 10;
+  slotsAvailable:number = 98;
 
   constructor() {
-    
     for (let index = 0; index < 108; index++) {
-      this.vagas[index] = index;
+      this.slots[index] = index;
     }
   }
   title = 'frontend-ws';

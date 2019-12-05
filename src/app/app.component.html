@@ -35,11 +35,11 @@
       <div class="subheading mb-5">Web Service para consulta de vagas de estacionamento disponíveis e ocupadas no IFSC -
         Câmpus Lages.</div>
 
-      <p class="lead mb-5">Vagas Disponíveis: <img src="/assets/img/Icons/available.png"> Vagas Ocupadas: <img
-          src="/assets/img/Icons/busy.png"></p>
+      <p class="lead mb-5"> <img src="/assets/img/Icons/available.png"> Vagas Disponíveis: {{ slotsBusy }} &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp;<img src="/assets/img/Icons/busy.png"> Vagas Ocupadas: {{ slotsAvailable }}</p>
       <div>
         <ul>
-          <li *ngFor="let item of vagas; let i = index">
+          <li *ngFor="let vaga of slots; let i = index">
             <button class="button button_available" onclick="getId(id)" id={{i}}>{{i+1}}</button>
           </li>
         </ul>
