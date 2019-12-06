@@ -35,9 +35,14 @@ export class AppComponent implements OnInit {
     console.log(id);
     console.log(this.vagas[id].Ocupada);
     if (this.vagas[id].Ocupada) {
-      this.parkingService.freeSlot(this.vagas[id].Numero).subscribe();
-    } else { this.parkingService.occupySlot(this.vagas[id].Numero).subscribe() }
-    location.reload();
+      this.parkingService.freeSlot(this.vagas[id].Numero).subscribe(() => {
+        location.reload();
+      });
+    } else {
+      this.parkingService.occupySlot(this.vagas[id].Numero).subscribe(() => {
+        location.reload();
+      });
+    }
   }
 
   checkSlots() {
@@ -48,17 +53,17 @@ export class AppComponent implements OnInit {
       //     changeButton(element.Numero);
       //   }
       // });
+      this.countSlots();
     });
-    this.countSlots();
   }
 
   countSlots() {
-    for (let index = 0; index < 108; index++) {
+    for (let index = 0; index < this.vagas.length; index++) {
       if (this.vagas[index].Ocupada) {
         this.slotsOccupied++;
       }
     }
-    this.slotsAvailable = 108 - this.slotsOccupied;
+    this.slotsAvailable = this.vagas.length - this.slotsOccupied;
   }
 
 
