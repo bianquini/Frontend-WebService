@@ -19,16 +19,16 @@ export class AppComponent implements OnInit {
 
   ocupada: boolean = false;
 
+  condition: boolean;
+
   slotsOccupied: number = 0;
   slotsAvailable: number = 0;
 
   constructor(public parkingService: ParkingService) {
-
   }
 
   ngOnInit(): void {
     this.checkSlots();
-    this.slotsAvailable = this.vagas.length;
   }
 
   occupy(id) {
@@ -48,11 +48,14 @@ export class AppComponent implements OnInit {
   checkSlots() {
     this.parkingService.getAllSlots().subscribe(response => {
       this.vagas = response;
-      // this.vagas.forEach(element => {
-      //   if (element.Ocupada) {
-      //     changeButton(element.Numero);
-      //   }
-      // });
+      this.vagas.forEach(element => {
+      if (element.Ocupada == true) {
+        console.log(element.Numero);
+           this.condition = true;
+         }else{
+          this.condition = false;
+         }
+       });
       this.countSlots();
     });
   }
