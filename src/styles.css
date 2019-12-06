@@ -215,8 +215,8 @@
     display: block;
   }
 
-  .button_busy {
-    background: url("assets/img/Icons/busy.png") rgb(255, 220, 216) no-repeat;
+  .button_occupied {
+    background: url("assets/img/Icons/occupied.png") rgb(255, 220, 216) no-repeat;
     height: 32px;
     width: 64px;
     color: rgb(201, 56, 66);

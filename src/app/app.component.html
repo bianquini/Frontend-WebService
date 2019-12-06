@@ -35,12 +35,12 @@
       <div class="subheading mb-5">Web Service para consulta de vagas de estacionamento disponíveis e ocupadas no IFSC -
         Câmpus Lages.</div>
 
-      <p class="lead mb-5"> <img src="/assets/img/Icons/available.png"> Vagas Disponíveis: {{ slotsBusy }} &nbsp; &nbsp;
-        &nbsp; &nbsp; &nbsp;<img src="/assets/img/Icons/busy.png"> Vagas Ocupadas: {{ slotsAvailable }}</p>
+      <p class="lead mb-5"> <img src="/assets/img/Icons/available.png"> Vagas Disponíveis: {{ slotsAvailable }} &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp;<img src="/assets/img/Icons/occupied.png"> Vagas Ocupadas: {{ slotsOccupied }}</p>
       <div>
         <ul>
-          <li *ngFor="let vaga of slots; let i = index">
-            <button class="button button_available" onclick="getId(id)" id={{i}}>{{i+1}}</button>
+          <li *ngFor="let vaga of vagas; let i = index">
+            <button class="button button_available" onclick="changeButton(id)" (click)="occupy(i)" id={{i}}>{{ i + 1 }}</button>
           </li>
         </ul>
       </div>
@@ -53,7 +53,11 @@
     <div class="w-100">
       <h1 class="mb-0">Projects - Iara e Wilson</h1>
       <div class="subheading mb-5">Descrição</div>
-      <p class="lead mb-5">Resultados</p>
+      <p>Projeto 1:</p>
+      <p>Código: {{ projects.id }}</p>
+      <p>Nome do Coordenador: {{ projects.nameCord }}</p>
+      <p>Descrição do projeto: {{ projects.desc }}</p>
+      <p>Email: {{ projects.email }}</p>
     </div>
   </section>
 

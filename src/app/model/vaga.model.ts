@@ -1,5 +1,5 @@
 export class Vaga{
 
-numero: number;
-situacao: Boolean;
+Numero: number;
+Ocupada: Boolean;
 }
