@@ -38,17 +38,14 @@
       <p class="lead mb-5"> <img src="/assets/img/Icons/available.png"> Vagas Disponíveis: {{ slotsAvailable }} &nbsp;
         &nbsp;
         &nbsp; &nbsp; &nbsp;<img src="/assets/img/Icons/occupied.png"> Vagas Ocupadas: {{ slotsOccupied }}</p>
-      <div>
-        <ul>
-          <li *ngFor="let vaga of vagas; let i = index">
-            <div *ngIf="condition; else elseBlock"><button class="button button_occupied" (click)="occupy(i)"
-                id={{i}}>{{ i + 1 }}</button></div>
-            <ng-template #elseBlock><button class="button button_available" (click)="occupy(i)"
-                id={{i}}>{{ i + 1 }}</button></ng-template>
-          </li>
-        </ul>
-
-      </div>
+          <ul>
+            <li *ngFor="let vaga of vagas; let i = index">
+              <div *ngIf="vaga.Ocupada else elseBlock"><button class="button button_occupied" (click)="occupy(i)"
+                  id={{i}}>{{ i + 1 }}</button></div>
+              <ng-template #elseBlock><button class="button button_available" (click)="occupy(i)"
+                  id={{i}}>{{ i + 1 }}</button></ng-template>
+            </li>
+          </ul>
     </div>
   </section>
 

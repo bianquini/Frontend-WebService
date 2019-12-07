@@ -17,10 +17,6 @@ export class AppComponent implements OnInit {
   //Parking
   vagas: Vaga[];
 
-  ocupada: boolean = false;
-
-  condition: boolean;
-
   slotsOccupied: number = 0;
   slotsAvailable: number = 0;
 
@@ -32,8 +28,6 @@ export class AppComponent implements OnInit {
   }
 
   occupy(id) {
-    console.log(id);
-    console.log(this.vagas[id].Ocupada);
     if (this.vagas[id].Ocupada) {
       this.parkingService.freeSlot(this.vagas[id].Numero).subscribe(() => {
         location.reload();
@@ -48,14 +42,6 @@ export class AppComponent implements OnInit {
   checkSlots() {
     this.parkingService.getAllSlots().subscribe(response => {
       this.vagas = response;
-      this.vagas.forEach(element => {
-      if (element.Ocupada == true) {
-        console.log(element.Numero);
-           this.condition = true;
-         }else{
-          this.condition = false;
-         }
-       });
       this.countSlots();
     });
   }
