@@ -1,7 +1,9 @@
-import { Observable } from 'rxjs';
+import { Project } from './model/project.model';
 import { ParkingService } from './service/parkingLot-service';
 import { Vaga } from './model/vaga.model';
 import { Component, OnInit } from '@angular/core';
+import { ProjectsRequest } from './model/projctsRequest.model';
+import { ProjectsService } from './service/projects-service';
 
 declare function changeButton(id: number): void;
 
@@ -20,11 +22,12 @@ export class AppComponent implements OnInit {
   slotsOccupied: number = 0;
   slotsAvailable: number = 0;
 
-  constructor(public parkingService: ParkingService) {
+  constructor(public parkingService: ParkingService, public projectsService: ProjectsService) {
   }
 
   ngOnInit(): void {
     this.checkSlots();
+    this.getAllProjects();
   }
 
   occupy(id) {
@@ -56,10 +59,31 @@ export class AppComponent implements OnInit {
   }
 
 
-
   //Projects
 
-  projects = { id: 10, nameCord: "Robson", desc: "WebService", email: "robson@gmail.com" }
+  projectsRequest: ProjectsRequest;
+  allProjects: Project[];
+  project: Project;
+
+  getAllProjects() {
+    this.projectsService.getAllProjets().subscribe(response => {
+      this.projectsRequest = response;
+      this.allProjects = this.projectsRequest.Data;
+    });
+  }
+
+  codProject: string = '';
+  selected: boolean = true;
+
+  selectProject (event: any) {
+    this.codProject = event.target.value;
+    this.allProjects.forEach(element => {
+      if(element.Codigo == this.codProject){
+        this.project = element;
+        this.selected = false;
+      }   
+    });
+  }
 
   //Routes
 

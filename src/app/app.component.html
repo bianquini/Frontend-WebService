@@ -38,14 +38,14 @@
       <p class="lead mb-5"> <img src="/assets/img/Icons/available.png"> Vagas Disponíveis: {{ slotsAvailable }} &nbsp;
         &nbsp;
         &nbsp; &nbsp; &nbsp;<img src="/assets/img/Icons/occupied.png"> Vagas Ocupadas: {{ slotsOccupied }}</p>
-          <ul>
-            <li *ngFor="let vaga of vagas; let i = index">
-              <div *ngIf="vaga.Ocupada else elseBlock"><button class="button button_occupied" (click)="occupy(i)"
-                  id={{i}}>{{ i + 1 }}</button></div>
-              <ng-template #elseBlock><button class="button button_available" (click)="occupy(i)"
-                  id={{i}}>{{ i + 1 }}</button></ng-template>
-            </li>
-          </ul>
+      <ul>
+        <li *ngFor="let vaga of vagas; let i = index">
+          <div *ngIf="vaga.Ocupada else elseBlock"><button class="button button_occupied" (click)="occupy(i)"
+              id={{i}}>{{ i + 1 }}</button></div>
+          <ng-template #elseBlock><button class="button button_available" (click)="occupy(i)"
+              id={{i}}>{{ i + 1 }}</button></ng-template>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -54,12 +54,24 @@
   <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="projects">
     <div class="w-100">
       <h1 class="mb-0">Projects - Iara e Wilson</h1>
-      <div class="subheading mb-5">Descrição</div>
-      <p>Projeto 1:</p>
-      <p>Código: {{ projects.id }}</p>
-      <p>Nome do Coordenador: {{ projects.nameCord }}</p>
-      <p>Descrição do projeto: {{ projects.desc }}</p>
-      <p>Email: {{ projects.email }}</p>
+      <div class="subheading mb-5">Web Service para consulta de informações sobre projetos desenvolvidos no IFSC -
+          Câmpus Lages.</div>
+      <select (change)="selectProject($event)" class="browser-default custom-select">
+        <option selected>Selecione o código do projeto</option>
+        <option *ngFor="let project of allProjects; let i = index" value={{project.Codigo}}>{{ project.Codigo }}</option>
+      </select>
+      <br><br>
+      <div *ngIf="selected else elseBlock"></div>
+      <ng-template #elseBlock>
+        <p><b>Titulo:</b> {{ project.Titulo }}</p>
+        <p><b>Tipo:</b> {{ project.Tipo }}</p>
+        <p><b>Categoria:</b> {{ project.Categoria }}</p>
+        <p><b>Situacao:</b> {{ project.Situacao }}</p>
+        <p><b>Area:</b> {{ project.Area }}</p>
+        <p><b>Email do Coordenador:</b> {{ project.EmailCoordenador }}</p>
+        <p><b>Nome do Coordenador:</b> {{ project.NomeCoordenador }}</p>
+        <p><b>Data de Cadastro:</b> {{ project.DataCadastro }}</p>
+      </ng-template>
     </div>
   </section>
 
