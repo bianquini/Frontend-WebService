@@ -1,8 +1,9 @@
+import { Situacao } from './enums/situacao.enum';
 import { Project } from './model/project.model';
 import { ParkingService } from './service/parkingLot-service';
 import { Vaga } from './model/vaga.model';
 import { Component, OnInit } from '@angular/core';
-import { ProjectsRequest } from './model/projctsRequest.model';
+import { ProjectsRequest } from './model/projectsRequest.model';
 import { ProjectsService } from './service/projects-service';
 
 declare function changeButton(id: number): void;
@@ -64,6 +65,9 @@ export class AppComponent implements OnInit {
   projectsRequest: ProjectsRequest;
   allProjects: Project[];
   project: Project;
+  codProject: string = '';
+  selected: boolean = true;
+  situacao: string; 
 
   getAllProjects() {
     this.projectsService.getAllProjets().subscribe(response => {
@@ -72,17 +76,16 @@ export class AppComponent implements OnInit {
     });
   }
 
-  codProject: string = '';
-  selected: boolean = true;
-
   selectProject (event: any) {
     this.codProject = event.target.value;
     this.allProjects.forEach(element => {
       if(element.Codigo == this.codProject){
         this.project = element;
         this.selected = false;
+        this.situacao = Situacao[element.Situacao];
       }   
     });
+    
   }
 
   //Routes

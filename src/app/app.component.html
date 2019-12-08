@@ -66,11 +66,11 @@
         <p><b>Titulo:</b> {{ project.Titulo }}</p>
         <p><b>Tipo:</b> {{ project.Tipo }}</p>
         <p><b>Categoria:</b> {{ project.Categoria }}</p>
-        <p><b>Situacao:</b> {{ project.Situacao }}</p>
+        <p><b>Situacao:</b> {{ situacao }}</p>
         <p><b>Area:</b> {{ project.Area }}</p>
         <p><b>Email do Coordenador:</b> {{ project.EmailCoordenador }}</p>
         <p><b>Nome do Coordenador:</b> {{ project.NomeCoordenador }}</p>
-        <p><b>Data de Cadastro:</b> {{ project.DataCadastro }}</p>
+        <p><b>Data de Cadastro:</b> {{ project.DataCadastro | date: 'dd/MM/yyyy' }}</p>
       </ng-template>
     </div>
   </section>
