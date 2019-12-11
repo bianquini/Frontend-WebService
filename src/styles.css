@@ -222,7 +222,10 @@
     color: rgb(201, 56, 66);
     display: block;
   }
-
+  
+  .button_secondary {
+    background-color: #fec96b;
+  }
  
 
   
