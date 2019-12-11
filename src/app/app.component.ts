@@ -1,3 +1,4 @@
+import { RoutesService } from './service/routes-service';
 import { Situacao } from './enums/situacao.enum';
 import { Project } from './model/project.model';
 import { ParkingService } from './service/parkingLot-service';
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectsRequest } from './model/projectsRequest.model';
 import { ProjectsService } from './service/projects-service';
 
-declare function changeButton(id: number): void;
+//Arquivos
+import locais  from "src/app/model/locais";
 
 @Component({
   selector: 'app-root',
@@ -23,7 +25,7 @@ export class AppComponent implements OnInit {
   slotsOccupied: number = 0;
   slotsAvailable: number = 0;
 
-  constructor(public parkingService: ParkingService, public projectsService: ProjectsService) {
+  constructor(public parkingService: ParkingService, public projectsService: ProjectsService,public routesService: RoutesService) {
   }
 
   ngOnInit(): void {
@@ -89,6 +91,20 @@ export class AppComponent implements OnInit {
   }
 
   //Routes
+
+  locais: Object[] = locais;
+  local: string = 'Auditório';
+  caminho : any;
+
+  getLocal(event) {
+    this.local = event.target.value;
+  }
+
+  buscar() {
+    this.routesService.getCaminho(this.local).subscribe((success:any) => {
+      this.caminho = success.destino;
+    });
+  }
 
 }
 

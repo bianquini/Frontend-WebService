@@ -1,3 +1,4 @@
+import { RoutesService } from './service/routes-service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, OnInit } from '@angular/core';
@@ -16,7 +17,7 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [ParkingService,ProjectsService],
+  providers: [ParkingService,ProjectsService,RoutesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
